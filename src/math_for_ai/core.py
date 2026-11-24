@@ -3,6 +3,8 @@ import numpy as np
 
 
 def array(x, ndim):
+    if np.iscomplexobj(x):
+        raise ValueError('Complex inputs are not supported')
     x = np.asarray(x, dtype=float)
     if x.ndim != ndim or not x.size or not np.isfinite(x).all():
         raise ValueError('Expected nonempty finite array of specified rank')
@@ -66,6 +68,16 @@ def solve(a, b):
     return x
 
 
+def scalar_objective(f, x):
+    value = np.asarray(f(x))
+    if value.ndim != 0 or np.iscomplexobj(value):
+        raise ValueError('Expected a real scalar objective')
+    value = float(value)
+    if not np.isfinite(value):
+        raise FloatingPointError('Nonfinite objective')
+    return value
+
+
 def gradient(f, x, h=1e-5):
     """Central finite differences for scalar-valued functions."""
     x = array(x, 1)
@@ -75,7 +87,12 @@ def gradient(f, x, h=1e-5):
     for i in range(len(x)):
         delta = np.zeros_like(x)
         delta[i] = h
-        out[i] = (f(x + delta) - f(x - delta)) / (2*h)
+        plus, minus = x + delta, x - delta
+        if not np.isfinite(plus).all() or not np.isfinite(minus).all():
+            raise FloatingPointError('Nonfinite differentiation point')
+        if plus[i] == x[i] or minus[i] == x[i]:
+            raise ValueError('Step is too small to change the input')
+        out[i] = (scalar_objective(f, plus) - scalar_objective(f, minus)) / (2*h)
     if not np.isfinite(out).all():
         raise FloatingPointError('Nonfinite derivative')
     return out
@@ -87,7 +104,7 @@ def optimize(f, grad, x, method='gd', rate=0.01, steps=200):
     if method not in ('gd', 'momentum', 'adam') or not np.isfinite(rate) or rate <= 0 or type(steps) is not int or steps < 1:
         raise ValueError('Invalid optimizer configuration')
     m, v = np.zeros_like(x), np.zeros_like(x)
-    history = [float(f(x))]
+    history = [scalar_objective(f, x)]
     for t in range(1, steps+1):
         g = array(grad(x), 1)
         if g.shape != x.shape:
@@ -98,12 +115,14 @@ def optimize(f, grad, x, method='gd', rate=0.01, steps=200):
             m = .9*m + g
             update = m
         else:
-            m, v = .9*m + .1*g, .999*v + .001*g*g
+            with np.errstate(over='raise', invalid='raise'):
+                m, v = .9*m + .1*g, .999*v + .001*g*g
             update = (m/(1-.9**t))/(np.sqrt(v/(1-.999**t))+1e-8)
-        x -= rate*update
-        history.append(float(f(x)))
-        if not np.isfinite(x).all() or not np.isfinite(history[-1]):
+        with np.errstate(over='raise', invalid='raise'):
+            x -= rate*update
+        if not np.isfinite(x).all() or not np.isfinite(update).all():
             raise FloatingPointError('Nonfinite optimization state')
+        history.append(scalar_objective(f, x))
     return x, np.asarray(history)
 
 

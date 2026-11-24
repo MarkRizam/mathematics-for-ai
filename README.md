@@ -1,6 +1,6 @@
 # Mathematics for AI — AIR-002
 
-**Status:** implemented educational numerical experiments, awaiting release audit and hosted CI. Not a novel or peer-reviewed study.
+**Status:** implemented educational numerical experiments, audited locally; updated hosted CI and release review pending. Not a novel or peer-reviewed study.
 
 ## Purpose
 Understand numerical foundations of AI through transparent Python implementations, mathematical references and reproducible experiments. This project complements [Machine Learning From Scratch](https://github.com/MarkRizam/machine-learning-from-scratch) and [RizamLearning](https://github.com/MarkRizam/RizamLearning).
@@ -29,6 +29,10 @@ For PowerShell set `$env:OPENBLAS_NUM_THREADS='1'` and `$env:OMP_NUM_THREADS='1'
 
 ## Findings
 The experiments are descriptive across three seeds. See [report](research/report.md), [protocol](research/protocol.md), [raw records](results/benchmarks.json), and [limitations](research/limitations.md). The reference may be an analytical ideal of zero error, rather than an independent numerical solver. No real-world dataset or participant data is used.
+
+## V1.1 audit
+
+14 regression cases added; 40 local tests passed. All 69 committed records reproduced with zero maximum observed local numerical difference. See [scientific audit](research/audit-v1.1.md) for the corrections and limitations.
 
 ## License and contributions
 MIT for original software; dependencies retain their respective licenses. See [LICENSE](LICENSE), [CONTRIBUTING.md](CONTRIBUTING.md) and [CITATION.cff](CITATION.cff). Scientific claims must be supported by reproducible evidence.
