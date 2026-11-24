@@ -1,57 +1,38 @@
-# Mathematics For AI
+# Mathematics for AI — AIR-002
 
-> **Development status: Planned.** Repository scaffolding only. No working implementation, experimental results, benchmark figures or completed research findings are claimed.
+**Status:** implemented educational numerical experiments, audited locally; updated hosted CI and release review pending. Not a novel or peer-reviewed study.
 
-## Project overview
-Mathematical foundations of artificial intelligence, including linear algebra, calculus and optimization.
+## Purpose
+Understand numerical foundations of AI through transparent Python implementations, mathematical references and reproducible experiments. This project complements [Machine Learning From Scratch](https://github.com/MarkRizam/machine-learning-from-scratch) and [RizamLearning](https://github.com/MarkRizam/RizamLearning).
 
-## Motivation
-This project is part of Mohd Rizam Bakar's learning and research portfolio while transitioning from software engineering toward AI science. Its focus is to understand and investigate linear algebra, derivatives, gradients and simple optimisation examples.
+## Implemented
+- Partial-pivoted LU and triangular linear-system solving.
+- Modified Gram–Schmidt QR.
+- Central finite differences.
+- Gradient descent, heavy-ball momentum and Adam.
+- Scalar reverse-mode automatic differentiation with shared graph nodes.
+- NumPy eigenvalue and SVD demonstrations (reference-backed, not from-scratch solvers).
+- Eight synthetic experiments, 23 configurations and 69 per-seed records; seven executed teaching notebooks.
 
-## Research objectives
-- Understand the mathematical operations behind learning algorithms.
-- connect symbolic reasoning with numerical checks.
+## Reproduce
+Python 3.10+; tested locally with Python 3.13 and NumPy 2.3.5. CPU only. Install in a virtual environment.
 
-## Proposed scope
-Linear algebra, derivatives, gradients and simple optimisation examples.
+```sh
+python -m pip install -e ".[research]"
+python -m pytest -q
+python scripts/verify_committed_results.py
+python -m math_for_ai.experiments
+python scripts/notebooks.py
+```
 
-## Planned technologies
-Python, NumPy, Matplotlib, Jupyter. These are proposed tools, not installed dependencies or implemented integrations. Record exact versions when implementation begins.
+For PowerShell set `$env:OPENBLAS_NUM_THREADS='1'` and `$env:OMP_NUM_THREADS='1'` before running. For Bash use `export OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1`. The experiment runner regenerates results and figures; verify committed records before regenerating.
 
-## Planned experiments or implementations
-- Implement matrix operations and compare with NumPy.
-- Check analytic gradients against finite differences.
-- Visualise gradient descent on simple functions.
+## Findings
+The experiments are descriptive across three seeds. See [report](research/report.md), [protocol](research/protocol.md), [raw records](results/benchmarks.json), and [limitations](research/limitations.md). The reference may be an analytical ideal of zero error, rather than an independent numerical solver. No real-world dataset or participant data is used.
 
-## Reproducibility objectives
-- Record the research question, assumptions and acceptance criteria before each experiment.
-- Pin code revisions and environment/dependency versions; record hardware where relevant.
-- Document data sources, licences, preprocessing, splits and random seeds.
-- Compare against a stated baseline and report limitations and failure cases.
-- Provide runnable commands and reviewed artefact manifests when implementations exist.
-- Keep proposals separate from observations; report uncertainty rather than inventing results.
+## V1.1 audit
 
-## Current status
-**Planned.** Only documentation and repository setup exist. There are no released models, published datasets, benchmark results or participant studies in this repository.
+14 regression cases added; 40 local tests passed. All 69 committed records reproduced with zero maximum observed local numerical difference. See [scientific audit](research/audit-v1.1.md) for the corrections and limitations.
 
-## Research and data responsibilities
-Use only public, synthetic or explicitly authorised non-sensitive material. Review dataset, model and dependency licences independently of the software licence. Do not commit credentials or private data.
-
-## Repository guide
-- [Documentation](docs/README.md): intended concepts and design notes.
-- [Research](research/README.md): questions, references and protocol planning.
-- [Datasets](datasets/README.md): provenance and access requirements.
-- [Experiments](experiments/README.md): planned protocols, not completed runs.
-- [Results](results/README.md): reporting policy; no results yet.
-- [Contributing](CONTRIBUTING.md): how to propose a focused contribution.
-
-## Related projects and portfolio
-- [statistics-for-ai](https://github.com/MarkRizam/statistics-for-ai)
-- [machine-learning-from-scratch](https://github.com/MarkRizam/machine-learning-from-scratch)
-- [RizamLearning](https://github.com/MarkRizam/RizamLearning): central portfolio and knowledge-library repository (visibility is managed separately).
-
-## Citation
-[CITATION.cff](CITATION.cff) identifies this software repository and its author. It does not claim a publication, affiliation, release or DOI.
-
-## License
-Original project software is licensed under the [MIT License](LICENSE). External datasets, pretrained models, reference documents and dependencies retain their own terms. The MIT license does not grant rights to third-party material.
+## License and contributions
+MIT for original software; dependencies retain their respective licenses. See [LICENSE](LICENSE), [CONTRIBUTING.md](CONTRIBUTING.md) and [CITATION.cff](CITATION.cff). Scientific claims must be supported by reproducible evidence.
