@@ -1,0 +1,805 @@
+{
+  "project": "AIR-002",
+  "seeds": [
+    11,
+    22,
+    33
+  ],
+  "environment": {
+    "python": "3.13.5",
+    "numpy": "2.3.5",
+    "platform": "Linux"
+  },
+  "reproducibility": {
+    "runs": 2,
+    "atol": 1e-10,
+    "rtol": 0,
+    "status": "pass"
+  },
+  "records": [
+    {
+      "experiment": "EXP-001",
+      "seed": 11,
+      "configuration": "pivoted LU",
+      "metric": "relative residual",
+      "ours": 6.845687728062402e-17,
+      "reference": 0.0
+    },
+    {
+      "experiment": "EXP-002",
+      "seed": 11,
+      "configuration": "QR reconstruction",
+      "metric": "relative residual",
+      "ours": 8.311008816384151e-17,
+      "reference": 1.9352774882721535e-16
+    },
+    {
+      "experiment": "EXP-002",
+      "seed": 11,
+      "configuration": "QR orthogonality",
+      "metric": "Frobenius error",
+      "ours": 3.337775471985443e-16,
+      "reference": 3.5422999712243657e-16
+    },
+    {
+      "experiment": "EXP-003",
+      "seed": 11,
+      "configuration": "condition=1",
+      "metric": "relative solution error",
+      "ours": 2.103948664321994e-16,
+      "reference": 2.0436720578790704e-16
+    },
+    {
+      "experiment": "EXP-003",
+      "seed": 11,
+      "configuration": "condition=10000",
+      "metric": "relative solution error",
+      "ours": 4.0036553641412046e-13,
+      "reference": 3.6362578514691994e-13
+    },
+    {
+      "experiment": "EXP-003",
+      "seed": 11,
+      "configuration": "condition=1e+08",
+      "metric": "relative solution error",
+      "ours": 1.269517131675732e-09,
+      "reference": 1.7584125014501195e-09
+    },
+    {
+      "experiment": "EXP-004",
+      "seed": 11,
+      "configuration": "h=0.1",
+      "metric": "gradient L2 error",
+      "ours": 0.0022369432531282704,
+      "reference": 0.0
+    },
+    {
+      "experiment": "EXP-004",
+      "seed": 11,
+      "configuration": "h=0.001",
+      "metric": "gradient L2 error",
+      "ours": 2.238062126714793e-07,
+      "reference": 0.0
+    },
+    {
+      "experiment": "EXP-004",
+      "seed": 11,
+      "configuration": "h=1e-05",
+      "metric": "gradient L2 error",
+      "ours": 2.2948396837698457e-11,
+      "reference": 0.0
+    },
+    {
+      "experiment": "EXP-004",
+      "seed": 11,
+      "configuration": "h=1e-07",
+      "metric": "gradient L2 error",
+      "ours": 7.274940407399518e-10,
+      "reference": 0.0
+    },
+    {
+      "experiment": "EXP-004",
+      "seed": 11,
+      "configuration": "h=1e-09",
+      "metric": "gradient L2 error",
+      "ours": 2.9568044068899124e-08,
+      "reference": 0.0
+    },
+    {
+      "experiment": "EXP-005",
+      "seed": 11,
+      "configuration": "gd, rate=0.01",
+      "metric": "final objective gap",
+      "ours": 0.0030183973667986153,
+      "reference": 0.0
+    },
+    {
+      "experiment": "EXP-005",
+      "seed": 11,
+      "configuration": "gd, rate=0.05",
+      "metric": "final objective gap",
+      "ours": 2.0660493447796433e-10,
+      "reference": 0.0
+    },
+    {
+      "experiment": "EXP-005",
+      "seed": 11,
+      "configuration": "momentum, rate=0.01",
+      "metric": "final objective gap",
+      "ours": 5.9848769477190584e-12,
+      "reference": 0.0
+    },
+    {
+      "experiment": "EXP-005",
+      "seed": 11,
+      "configuration": "momentum, rate=0.05",
+      "metric": "final objective gap",
+      "ours": 5.946445075927004e-10,
+      "reference": 0.0
+    },
+    {
+      "experiment": "EXP-005",
+      "seed": 11,
+      "configuration": "adam, rate=0.01",
+      "metric": "final objective gap",
+      "ours": 9.425676518258644e-09,
+      "reference": 0.0
+    },
+    {
+      "experiment": "EXP-005",
+      "seed": 11,
+      "configuration": "adam, rate=0.05",
+      "metric": "final objective gap",
+      "ours": 4.227845875518151e-10,
+      "reference": 0.0
+    },
+    {
+      "experiment": "EXP-006",
+      "seed": 11,
+      "configuration": "reverse mode vs central difference",
+      "metric": "gradient L2 error",
+      "ours": 0.0,
+      "reference": 5.164187723436246e-11
+    },
+    {
+      "experiment": "EXP-007",
+      "seed": 11,
+      "configuration": "SVD rank=1",
+      "metric": "relative reconstruction error",
+      "ours": 0.6863103398262305,
+      "reference": 0.6863103398262306
+    },
+    {
+      "experiment": "EXP-007",
+      "seed": 11,
+      "configuration": "SVD rank=2",
+      "metric": "relative reconstruction error",
+      "ours": 0.48204898845627114,
+      "reference": 0.4820489884562714
+    },
+    {
+      "experiment": "EXP-007",
+      "seed": 11,
+      "configuration": "SVD rank=3",
+      "metric": "relative reconstruction error",
+      "ours": 0.3295032604037667,
+      "reference": 0.32950326040376676
+    },
+    {
+      "experiment": "EXP-007",
+      "seed": 11,
+      "configuration": "SVD rank=4",
+      "metric": "relative reconstruction error",
+      "ours": 9.409615309570892e-16,
+      "reference": 0.0
+    },
+    {
+      "experiment": "EXP-008",
+      "seed": 11,
+      "configuration": "symmetric eigenpairs",
+      "metric": "relative eigenpair residual",
+      "ours": 2.2251937752190556e-16,
+      "reference": 0.0
+    },
+    {
+      "experiment": "EXP-001",
+      "seed": 22,
+      "configuration": "pivoted LU",
+      "metric": "relative residual",
+      "ours": 8.721250912015577e-17,
+      "reference": 0.0
+    },
+    {
+      "experiment": "EXP-002",
+      "seed": 22,
+      "configuration": "QR reconstruction",
+      "metric": "relative residual",
+      "ours": 6.429758451124982e-17,
+      "reference": 2.4155639858232977e-16
+    },
+    {
+      "experiment": "EXP-002",
+      "seed": 22,
+      "configuration": "QR orthogonality",
+      "metric": "Frobenius error",
+      "ours": 4.87656860136583e-16,
+      "reference": 6.203576044581362e-16
+    },
+    {
+      "experiment": "EXP-003",
+      "seed": 22,
+      "configuration": "condition=1",
+      "metric": "relative solution error",
+      "ours": 1.9727952492498215e-16,
+      "reference": 1.9175582772456848e-16
+    },
+    {
+      "experiment": "EXP-003",
+      "seed": 22,
+      "configuration": "condition=10000",
+      "metric": "relative solution error",
+      "ours": 3.334480131471423e-14,
+      "reference": 7.978593055209349e-14
+    },
+    {
+      "experiment": "EXP-003",
+      "seed": 22,
+      "configuration": "condition=1e+08",
+      "metric": "relative solution error",
+      "ours": 1.2514810729874981e-09,
+      "reference": 7.546365606326542e-11
+    },
+    {
+      "experiment": "EXP-004",
+      "seed": 22,
+      "configuration": "h=0.1",
+      "metric": "gradient L2 error",
+      "ours": 0.002640935739428119,
+      "reference": 0.0
+    },
+    {
+      "experiment": "EXP-004",
+      "seed": 22,
+      "configuration": "h=0.001",
+      "metric": "gradient L2 error",
+      "ours": 2.6422564944733665e-07,
+      "reference": 0.0
+    },
+    {
+      "experiment": "EXP-004",
+      "seed": 22,
+      "configuration": "h=1e-05",
+      "metric": "gradient L2 error",
+      "ours": 2.566321121449181e-11,
+      "reference": 0.0
+    },
+    {
+      "experiment": "EXP-004",
+      "seed": 22,
+      "configuration": "h=1e-07",
+      "metric": "gradient L2 error",
+      "ours": 8.59583057089259e-10,
+      "reference": 0.0
+    },
+    {
+      "experiment": "EXP-004",
+      "seed": 22,
+      "configuration": "h=1e-09",
+      "metric": "gradient L2 error",
+      "ours": 3.979541481004075e-08,
+      "reference": 0.0
+    },
+    {
+      "experiment": "EXP-005",
+      "seed": 22,
+      "configuration": "gd, rate=0.01",
+      "metric": "final objective gap",
+      "ours": 0.0061247057298836885,
+      "reference": 0.0
+    },
+    {
+      "experiment": "EXP-005",
+      "seed": 22,
+      "configuration": "gd, rate=0.05",
+      "metric": "final objective gap",
+      "ours": 4.1922724951272456e-10,
+      "reference": 0.0
+    },
+    {
+      "experiment": "EXP-005",
+      "seed": 22,
+      "configuration": "momentum, rate=0.01",
+      "metric": "final objective gap",
+      "ours": 7.343496066014172e-12,
+      "reference": 0.0
+    },
+    {
+      "experiment": "EXP-005",
+      "seed": 22,
+      "configuration": "momentum, rate=0.05",
+      "metric": "final objective gap",
+      "ours": 3.3049615707779455e-10,
+      "reference": 0.0
+    },
+    {
+      "experiment": "EXP-005",
+      "seed": 22,
+      "configuration": "adam, rate=0.01",
+      "metric": "final objective gap",
+      "ours": 7.333205754427695e-07,
+      "reference": 0.0
+    },
+    {
+      "experiment": "EXP-005",
+      "seed": 22,
+      "configuration": "adam, rate=0.05",
+      "metric": "final objective gap",
+      "ours": 4.530617046684928e-10,
+      "reference": 0.0
+    },
+    {
+      "experiment": "EXP-006",
+      "seed": 22,
+      "configuration": "reverse mode vs central difference",
+      "metric": "gradient L2 error",
+      "ours": 2.220446049250313e-16,
+      "reference": 1.2538965067287939e-11
+    },
+    {
+      "experiment": "EXP-007",
+      "seed": 22,
+      "configuration": "SVD rank=1",
+      "metric": "relative reconstruction error",
+      "ours": 0.6385402957219513,
+      "reference": 0.6385402957219513
+    },
+    {
+      "experiment": "EXP-007",
+      "seed": 22,
+      "configuration": "SVD rank=2",
+      "metric": "relative reconstruction error",
+      "ours": 0.4936769847468442,
+      "reference": 0.49367698474684446
+    },
+    {
+      "experiment": "EXP-007",
+      "seed": 22,
+      "configuration": "SVD rank=3",
+      "metric": "relative reconstruction error",
+      "ours": 0.33868763212756275,
+      "reference": 0.33868763212756287
+    },
+    {
+      "experiment": "EXP-007",
+      "seed": 22,
+      "configuration": "SVD rank=4",
+      "metric": "relative reconstruction error",
+      "ours": 1.2133877813902642e-15,
+      "reference": 0.0
+    },
+    {
+      "experiment": "EXP-008",
+      "seed": 22,
+      "configuration": "symmetric eigenpairs",
+      "metric": "relative eigenpair residual",
+      "ours": 3.2804583436356777e-16,
+      "reference": 0.0
+    },
+    {
+      "experiment": "EXP-001",
+      "seed": 33,
+      "configuration": "pivoted LU",
+      "metric": "relative residual",
+      "ours": 1.459811694054541e-16,
+      "reference": 0.0
+    },
+    {
+      "experiment": "EXP-002",
+      "seed": 33,
+      "configuration": "QR reconstruction",
+      "metric": "relative residual",
+      "ours": 6.653788999568311e-17,
+      "reference": 1.6238055615834936e-16
+    },
+    {
+      "experiment": "EXP-002",
+      "seed": 33,
+      "configuration": "QR orthogonality",
+      "metric": "Frobenius error",
+      "ours": 3.331272334592792e-16,
+      "reference": 2.325627436840414e-16
+    },
+    {
+      "experiment": "EXP-003",
+      "seed": 33,
+      "configuration": "condition=1",
+      "metric": "relative solution error",
+      "ours": 1.385700334193222e-16,
+      "reference": 1.8211670311164593e-16
+    },
+    {
+      "experiment": "EXP-003",
+      "seed": 33,
+      "configuration": "condition=10000",
+      "metric": "relative solution error",
+      "ours": 1.3520659239590662e-14,
+      "reference": 2.8379520338255683e-15
+    },
+    {
+      "experiment": "EXP-003",
+      "seed": 33,
+      "configuration": "condition=1e+08",
+      "metric": "relative solution error",
+      "ours": 3.9605145069549433e-10,
+      "reference": 1.7324332130689066e-10
+    },
+    {
+      "experiment": "EXP-004",
+      "seed": 33,
+      "configuration": "h=0.1",
+      "metric": "gradient L2 error",
+      "ours": 0.002311144828531611,
+      "reference": 0.0
+    },
+    {
+      "experiment": "EXP-004",
+      "seed": 33,
+      "configuration": "h=0.001",
+      "metric": "gradient L2 error",
+      "ours": 2.312301301668458e-07,
+      "reference": 0.0
+    },
+    {
+      "experiment": "EXP-004",
+      "seed": 33,
+      "configuration": "h=1e-05",
+      "metric": "gradient L2 error",
+      "ours": 3.033917861939515e-11,
+      "reference": 0.0
+    },
+    {
+      "experiment": "EXP-004",
+      "seed": 33,
+      "configuration": "h=1e-07",
+      "metric": "gradient L2 error",
+      "ours": 1.0263117997231045e-09,
+      "reference": 0.0
+    },
+    {
+      "experiment": "EXP-004",
+      "seed": 33,
+      "configuration": "h=1e-09",
+      "metric": "gradient L2 error",
+      "ours": 1.331978697547111e-07,
+      "reference": 0.0
+    },
+    {
+      "experiment": "EXP-005",
+      "seed": 33,
+      "configuration": "gd, rate=0.01",
+      "metric": "final objective gap",
+      "ours": 0.004300298955287122,
+      "reference": 0.0
+    },
+    {
+      "experiment": "EXP-005",
+      "seed": 33,
+      "configuration": "gd, rate=0.05",
+      "metric": "final objective gap",
+      "ours": 2.943492442928668e-10,
+      "reference": 0.0
+    },
+    {
+      "experiment": "EXP-005",
+      "seed": 33,
+      "configuration": "momentum, rate=0.01",
+      "metric": "final objective gap",
+      "ours": 1.56574250604094e-11,
+      "reference": 0.0
+    },
+    {
+      "experiment": "EXP-005",
+      "seed": 33,
+      "configuration": "momentum, rate=0.05",
+      "metric": "final objective gap",
+      "ours": 2.148569992569441e-09,
+      "reference": 0.0
+    },
+    {
+      "experiment": "EXP-005",
+      "seed": 33,
+      "configuration": "adam, rate=0.01",
+      "metric": "final objective gap",
+      "ours": 0.003952523878432604,
+      "reference": 0.0
+    },
+    {
+      "experiment": "EXP-005",
+      "seed": 33,
+      "configuration": "adam, rate=0.05",
+      "metric": "final objective gap",
+      "ours": 5.280827931301216e-10,
+      "reference": 0.0
+    },
+    {
+      "experiment": "EXP-006",
+      "seed": 33,
+      "configuration": "reverse mode vs central difference",
+      "metric": "gradient L2 error",
+      "ours": 0.0,
+      "reference": 2.4663654985279163e-11
+    },
+    {
+      "experiment": "EXP-007",
+      "seed": 33,
+      "configuration": "SVD rank=1",
+      "metric": "relative reconstruction error",
+      "ours": 0.6531571026367322,
+      "reference": 0.6531571026367322
+    },
+    {
+      "experiment": "EXP-007",
+      "seed": 33,
+      "configuration": "SVD rank=2",
+      "metric": "relative reconstruction error",
+      "ours": 0.32606501532804616,
+      "reference": 0.3260650153280462
+    },
+    {
+      "experiment": "EXP-007",
+      "seed": 33,
+      "configuration": "SVD rank=3",
+      "metric": "relative reconstruction error",
+      "ours": 0.1126967704073737,
+      "reference": 0.11269677040737366
+    },
+    {
+      "experiment": "EXP-007",
+      "seed": 33,
+      "configuration": "SVD rank=4",
+      "metric": "relative reconstruction error",
+      "ours": 4.707517354081737e-16,
+      "reference": 0.0
+    },
+    {
+      "experiment": "EXP-008",
+      "seed": 33,
+      "configuration": "symmetric eigenpairs",
+      "metric": "relative eigenpair residual",
+      "ours": 3.4590273174261673e-16,
+      "reference": 0.0
+    }
+  ],
+  "summary": [
+    {
+      "experiment": "EXP-001",
+      "configuration": "pivoted LU",
+      "metric": "relative residual",
+      "n": 3,
+      "ours_mean": 1.0055018526874463e-16,
+      "ours_sd": 4.044655944759053e-17,
+      "reference_mean": 0.0,
+      "reference_sd": 0.0
+    },
+    {
+      "experiment": "EXP-002",
+      "configuration": "QR reconstruction",
+      "metric": "relative residual",
+      "n": 3,
+      "ours_mean": 7.13151875569248e-17,
+      "ours_sd": 1.0275918567757256e-17,
+      "reference_mean": 1.9915490118929816e-16,
+      "reference_sd": 3.988674138941804e-17
+    },
+    {
+      "experiment": "EXP-002",
+      "configuration": "QR orthogonality",
+      "metric": "Frobenius error",
+      "n": 3,
+      "ours_mean": 3.8485388026480214e-16,
+      "ours_sd": 8.903058592348022e-17,
+      "reference_mean": 4.0238344842153805e-16,
+      "reference_sd": 1.9833123723889563e-16
+    },
+    {
+      "experiment": "EXP-003",
+      "configuration": "condition=1",
+      "metric": "relative solution error",
+      "n": 3,
+      "ours_mean": 1.8208147492550126e-16,
+      "ours_sd": 3.824836208482613e-17,
+      "reference_mean": 1.9274657887470715e-16,
+      "reference_sd": 1.1158288767445549e-17
+    },
+    {
+      "experiment": "EXP-003",
+      "configuration": "condition=10000",
+      "metric": "relative solution error",
+      "n": 3,
+      "ours_mean": 1.490769989894751e-13,
+      "ours_sd": 2.1784787337272017e-13,
+      "reference_mean": 1.4874988924427966e-13,
+      "reference_sd": 1.9002364544835908e-13
+    },
+    {
+      "experiment": "EXP-003",
+      "configuration": "condition=1e+08",
+      "metric": "relative solution error",
+      "n": 3,
+      "ours_mean": 9.723498851195748e-10,
+      "ours_sd": 4.991705510073546e-10,
+      "reference_mean": 6.690398262734252e-10,
+      "reference_sd": 9.446903380473463e-10
+    },
+    {
+      "experiment": "EXP-004",
+      "configuration": "h=0.1",
+      "metric": "gradient L2 error",
+      "n": 3,
+      "ours_mean": 0.002396341273696,
+      "ours_sd": 0.00021504954765860334,
+      "reference_mean": 0.0,
+      "reference_sd": 0.0
+    },
+    {
+      "experiment": "EXP-004",
+      "configuration": "h=0.001",
+      "metric": "gradient L2 error",
+      "n": 3,
+      "ours_mean": 2.3975399742855394e-07,
+      "ours_sd": 2.1515690835778364e-08,
+      "reference_mean": 0.0,
+      "reference_sd": 0.0
+    },
+    {
+      "experiment": "EXP-004",
+      "configuration": "h=1e-05",
+      "metric": "gradient L2 error",
+      "n": 3,
+      "ours_mean": 2.6316928890528472e-11,
+      "ours_sd": 3.738505575244875e-12,
+      "reference_mean": 0.0,
+      "reference_sd": 0.0
+    },
+    {
+      "experiment": "EXP-004",
+      "configuration": "h=1e-07",
+      "metric": "gradient L2 error",
+      "n": 3,
+      "ours_mean": 8.711296325174385e-10,
+      "ours_sd": 1.4974313281088173e-10,
+      "reference_mean": 0.0,
+      "reference_sd": 0.0
+    },
+    {
+      "experiment": "EXP-004",
+      "configuration": "h=1e-09",
+      "metric": "gradient L2 error",
+      "n": 3,
+      "ours_mean": 6.752044287788366e-08,
+      "ours_sd": 5.710773221674935e-08,
+      "reference_mean": 0.0,
+      "reference_sd": 0.0
+    },
+    {
+      "experiment": "EXP-005",
+      "configuration": "gd, rate=0.01",
+      "metric": "final objective gap",
+      "n": 3,
+      "ours_mean": 0.0044811340173231415,
+      "ours_sd": 0.0015610297567276688,
+      "reference_mean": 0.0,
+      "reference_sd": 0.0
+    },
+    {
+      "experiment": "EXP-005",
+      "configuration": "gd, rate=0.05",
+      "metric": "final objective gap",
+      "n": 3,
+      "ours_mean": 3.0672714276118525e-10,
+      "ours_sd": 1.0685022924895485e-10,
+      "reference_mean": 0.0,
+      "reference_sd": 0.0
+    },
+    {
+      "experiment": "EXP-005",
+      "configuration": "momentum, rate=0.01",
+      "metric": "final objective gap",
+      "n": 3,
+      "ours_mean": 9.661932691380878e-12,
+      "ours_sd": 5.236497688098286e-12,
+      "reference_mean": 0.0,
+      "reference_sd": 0.0
+    },
+    {
+      "experiment": "EXP-005",
+      "configuration": "momentum, rate=0.05",
+      "metric": "final objective gap",
+      "n": 3,
+      "ours_mean": 1.0245702190799786e-09,
+      "ours_sd": 9.82331515260102e-10,
+      "reference_mean": 0.0,
+      "reference_sd": 0.0
+    },
+    {
+      "experiment": "EXP-005",
+      "configuration": "adam, rate=0.01",
+      "metric": "final objective gap",
+      "n": 3,
+      "ours_mean": 0.0013177555415615216,
+      "ours_sd": 0.002281776341524244,
+      "reference_mean": 0.0,
+      "reference_sd": 0.0
+    },
+    {
+      "experiment": "EXP-005",
+      "configuration": "adam, rate=0.05",
+      "metric": "final objective gap",
+      "n": 3,
+      "ours_mean": 4.679763617834765e-10,
+      "ours_sd": 5.421036129879576e-11,
+      "reference_mean": 0.0,
+      "reference_sd": 0.0
+    },
+    {
+      "experiment": "EXP-006",
+      "configuration": "reverse mode vs central difference",
+      "metric": "gradient L2 error",
+      "n": 3,
+      "ours_mean": 7.401486830834377e-17,
+      "ours_sd": 1.2819751242557095e-16,
+      "reference_mean": 2.961483242897652e-11,
+      "reference_sd": 2.001611984241e-11
+    },
+    {
+      "experiment": "EXP-007",
+      "configuration": "SVD rank=1",
+      "metric": "relative reconstruction error",
+      "n": 3,
+      "ours_mean": 0.6593359127283046,
+      "ours_sd": 0.02447708211862646,
+      "reference_mean": 0.6593359127283046,
+      "reference_sd": 0.024477082118626523
+    },
+    {
+      "experiment": "EXP-007",
+      "configuration": "SVD rank=2",
+      "metric": "relative reconstruction error",
+      "n": 3,
+      "ours_mean": 0.4339303295103872,
+      "ours_sd": 0.09359485604014114,
+      "reference_mean": 0.43393032951038735,
+      "reference_sd": 0.09359485604014128
+    },
+    {
+      "experiment": "EXP-007",
+      "configuration": "SVD rank=3",
+      "metric": "relative reconstruction error",
+      "n": 3,
+      "ours_mean": 0.2602958876462344,
+      "ours_sd": 0.127907047218902,
+      "reference_mean": 0.2602958876462344,
+      "reference_sd": 0.12790704721890206
+    },
+    {
+      "experiment": "EXP-007",
+      "configuration": "SVD rank=4",
+      "metric": "relative reconstruction error",
+      "n": 3,
+      "ours_mean": 8.750336825851757e-16,
+      "ours_sd": 3.7568196002894643e-16,
+      "reference_mean": 0.0,
+      "reference_sd": 0.0
+    },
+    {
+      "experiment": "EXP-008",
+      "configuration": "symmetric eigenpairs",
+      "metric": "relative eigenpair residual",
+      "n": 3,
+      "ours_mean": 2.9882264787603e-16,
+      "ours_sd": 6.668102425767339e-17,
+      "reference_mean": 0.0,
+      "reference_sd": 0.0
+    }
+  ]
+}

@@ -1,0 +1,273 @@
+{
+  "project_id": "AIR-002",
+  "title": "Mathematics for AI",
+  "repository": "https://github.com/MarkRizam/mathematics-for-ai",
+  "status": "implemented; awaiting release review",
+  "experiments": 8,
+  "records": 69,
+  "configurations": 23,
+  "seeds": [
+    11,
+    22,
+    33
+  ],
+  "benchmark_summary": [
+    {
+      "experiment": "EXP-001",
+      "configuration": "pivoted LU",
+      "metric": "relative residual",
+      "n": 3,
+      "ours_mean": 1.0055018526874463e-16,
+      "ours_sd": 4.044655944759053e-17,
+      "reference_mean": 0.0,
+      "reference_sd": 0.0
+    },
+    {
+      "experiment": "EXP-002",
+      "configuration": "QR reconstruction",
+      "metric": "relative residual",
+      "n": 3,
+      "ours_mean": 7.13151875569248e-17,
+      "ours_sd": 1.0275918567757256e-17,
+      "reference_mean": 1.9915490118929816e-16,
+      "reference_sd": 3.988674138941804e-17
+    },
+    {
+      "experiment": "EXP-002",
+      "configuration": "QR orthogonality",
+      "metric": "Frobenius error",
+      "n": 3,
+      "ours_mean": 3.8485388026480214e-16,
+      "ours_sd": 8.903058592348022e-17,
+      "reference_mean": 4.0238344842153805e-16,
+      "reference_sd": 1.9833123723889563e-16
+    },
+    {
+      "experiment": "EXP-003",
+      "configuration": "condition=1",
+      "metric": "relative solution error",
+      "n": 3,
+      "ours_mean": 1.8208147492550126e-16,
+      "ours_sd": 3.824836208482613e-17,
+      "reference_mean": 1.9274657887470715e-16,
+      "reference_sd": 1.1158288767445549e-17
+    },
+    {
+      "experiment": "EXP-003",
+      "configuration": "condition=10000",
+      "metric": "relative solution error",
+      "n": 3,
+      "ours_mean": 1.490769989894751e-13,
+      "ours_sd": 2.1784787337272017e-13,
+      "reference_mean": 1.4874988924427966e-13,
+      "reference_sd": 1.9002364544835908e-13
+    },
+    {
+      "experiment": "EXP-003",
+      "configuration": "condition=1e+08",
+      "metric": "relative solution error",
+      "n": 3,
+      "ours_mean": 9.723498851195748e-10,
+      "ours_sd": 4.991705510073546e-10,
+      "reference_mean": 6.690398262734252e-10,
+      "reference_sd": 9.446903380473463e-10
+    },
+    {
+      "experiment": "EXP-004",
+      "configuration": "h=0.1",
+      "metric": "gradient L2 error",
+      "n": 3,
+      "ours_mean": 0.002396341273696,
+      "ours_sd": 0.00021504954765860334,
+      "reference_mean": 0.0,
+      "reference_sd": 0.0
+    },
+    {
+      "experiment": "EXP-004",
+      "configuration": "h=0.001",
+      "metric": "gradient L2 error",
+      "n": 3,
+      "ours_mean": 2.3975399742855394e-07,
+      "ours_sd": 2.1515690835778364e-08,
+      "reference_mean": 0.0,
+      "reference_sd": 0.0
+    },
+    {
+      "experiment": "EXP-004",
+      "configuration": "h=1e-05",
+      "metric": "gradient L2 error",
+      "n": 3,
+      "ours_mean": 2.6316928890528472e-11,
+      "ours_sd": 3.738505575244875e-12,
+      "reference_mean": 0.0,
+      "reference_sd": 0.0
+    },
+    {
+      "experiment": "EXP-004",
+      "configuration": "h=1e-07",
+      "metric": "gradient L2 error",
+      "n": 3,
+      "ours_mean": 8.711296325174385e-10,
+      "ours_sd": 1.4974313281088173e-10,
+      "reference_mean": 0.0,
+      "reference_sd": 0.0
+    },
+    {
+      "experiment": "EXP-004",
+      "configuration": "h=1e-09",
+      "metric": "gradient L2 error",
+      "n": 3,
+      "ours_mean": 6.752044287788366e-08,
+      "ours_sd": 5.710773221674935e-08,
+      "reference_mean": 0.0,
+      "reference_sd": 0.0
+    },
+    {
+      "experiment": "EXP-005",
+      "configuration": "gd, rate=0.01",
+      "metric": "final objective gap",
+      "n": 3,
+      "ours_mean": 0.0044811340173231415,
+      "ours_sd": 0.0015610297567276688,
+      "reference_mean": 0.0,
+      "reference_sd": 0.0
+    },
+    {
+      "experiment": "EXP-005",
+      "configuration": "gd, rate=0.05",
+      "metric": "final objective gap",
+      "n": 3,
+      "ours_mean": 3.0672714276118525e-10,
+      "ours_sd": 1.0685022924895485e-10,
+      "reference_mean": 0.0,
+      "reference_sd": 0.0
+    },
+    {
+      "experiment": "EXP-005",
+      "configuration": "momentum, rate=0.01",
+      "metric": "final objective gap",
+      "n": 3,
+      "ours_mean": 9.661932691380878e-12,
+      "ours_sd": 5.236497688098286e-12,
+      "reference_mean": 0.0,
+      "reference_sd": 0.0
+    },
+    {
+      "experiment": "EXP-005",
+      "configuration": "momentum, rate=0.05",
+      "metric": "final objective gap",
+      "n": 3,
+      "ours_mean": 1.0245702190799786e-09,
+      "ours_sd": 9.82331515260102e-10,
+      "reference_mean": 0.0,
+      "reference_sd": 0.0
+    },
+    {
+      "experiment": "EXP-005",
+      "configuration": "adam, rate=0.01",
+      "metric": "final objective gap",
+      "n": 3,
+      "ours_mean": 0.0013177555415615216,
+      "ours_sd": 0.002281776341524244,
+      "reference_mean": 0.0,
+      "reference_sd": 0.0
+    },
+    {
+      "experiment": "EXP-005",
+      "configuration": "adam, rate=0.05",
+      "metric": "final objective gap",
+      "n": 3,
+      "ours_mean": 4.679763617834765e-10,
+      "ours_sd": 5.421036129879576e-11,
+      "reference_mean": 0.0,
+      "reference_sd": 0.0
+    },
+    {
+      "experiment": "EXP-006",
+      "configuration": "reverse mode vs central difference",
+      "metric": "gradient L2 error",
+      "n": 3,
+      "ours_mean": 7.401486830834377e-17,
+      "ours_sd": 1.2819751242557095e-16,
+      "reference_mean": 2.961483242897652e-11,
+      "reference_sd": 2.001611984241e-11
+    },
+    {
+      "experiment": "EXP-007",
+      "configuration": "SVD rank=1",
+      "metric": "relative reconstruction error",
+      "n": 3,
+      "ours_mean": 0.6593359127283046,
+      "ours_sd": 0.02447708211862646,
+      "reference_mean": 0.6593359127283046,
+      "reference_sd": 0.024477082118626523
+    },
+    {
+      "experiment": "EXP-007",
+      "configuration": "SVD rank=2",
+      "metric": "relative reconstruction error",
+      "n": 3,
+      "ours_mean": 0.4339303295103872,
+      "ours_sd": 0.09359485604014114,
+      "reference_mean": 0.43393032951038735,
+      "reference_sd": 0.09359485604014128
+    },
+    {
+      "experiment": "EXP-007",
+      "configuration": "SVD rank=3",
+      "metric": "relative reconstruction error",
+      "n": 3,
+      "ours_mean": 0.2602958876462344,
+      "ours_sd": 0.127907047218902,
+      "reference_mean": 0.2602958876462344,
+      "reference_sd": 0.12790704721890206
+    },
+    {
+      "experiment": "EXP-007",
+      "configuration": "SVD rank=4",
+      "metric": "relative reconstruction error",
+      "n": 3,
+      "ours_mean": 8.750336825851757e-16,
+      "ours_sd": 3.7568196002894643e-16,
+      "reference_mean": 0.0,
+      "reference_sd": 0.0
+    },
+    {
+      "experiment": "EXP-008",
+      "configuration": "symmetric eigenpairs",
+      "metric": "relative eigenpair residual",
+      "n": 3,
+      "ours_mean": 2.9882264787603e-16,
+      "ours_sd": 6.668102425767339e-17,
+      "reference_mean": 0.0,
+      "reference_sd": 0.0
+    }
+  ],
+  "environment": {
+    "python": "3.13.5",
+    "numpy": "2.3.5",
+    "platform": "Linux"
+  },
+  "reproducibility": {
+    "runs": 2,
+    "atol": 1e-10,
+    "rtol": 0,
+    "status": "pass"
+  },
+  "verification": {
+    "local_unit_tests": 26,
+    "notebooks": 7,
+    "hosted_ci": "pending"
+  },
+  "figures": [
+    "figures/EXP-001.svg",
+    "figures/EXP-002.svg",
+    "figures/EXP-003.svg",
+    "figures/EXP-004.svg",
+    "figures/EXP-005.svg",
+    "figures/EXP-006.svg",
+    "figures/EXP-007.svg",
+    "figures/EXP-008.svg"
+  ],
+  "limitations": "See research/limitations.md. Eigen/SVD are NumPy reference demonstrations."
+}

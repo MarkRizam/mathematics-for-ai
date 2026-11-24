@@ -1,8 +1,3 @@
-# Mathematics For AI: data plan
+# Data provenance
 
-Status: **Planned**. No datasets or participant records are included.
-
-Scope: Linear algebra, derivatives, gradients and simple optimisation examples. Before acquiring data, document its source, version, access terms, redistribution rights, permitted uses, provenance, preprocessing and split strategy. Prefer synthetic or appropriately licensed non-sensitive material for initial work. Do not infer permission to redistribute from permission to download.
-
-Use only public, synthetic or explicitly authorised non-sensitive material. Review dataset, model and dependency licences independently of the software licence. Do not commit credentials or private data.
-
+All arrays and functions are generated locally by the fixed seeds in the experiment runner. No external datasets or personal records are used.
